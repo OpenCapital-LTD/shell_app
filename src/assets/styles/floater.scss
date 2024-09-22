@@ -1,0 +1,50 @@
+@use 'const';
+@use 'mixins';
+@use 'extends';
+
+.floater {
+    @include mixins.flex(center, center, column);
+    border: 1px solid const.$light_orange_theme;
+    position: fixed;
+    background-color: white;
+    top: 2%;
+    left: 2%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    z-index: 200;
+
+    .menu_butt {
+        width: 100%;
+        height: 100%;
+        @include mixins.flex(center, center, row)
+    }
+
+    .icon {
+        font-size: 20px;
+        background-color: white;
+
+    }
+
+    .floater_menu {
+        margin-top: 130px;
+        margin-left: 120px;
+        position: absolute;
+        @include mixins.flex(center, center, row);
+        background-color: white;
+        color: const.$light_orange_theme;
+        border: 1px solid const.$light_orange_theme;
+
+        .floater_app {
+            font-size: 25px;
+            margin: 10px;
+            padding: 5px;
+            border: 1px solid const.$blue_theme;
+        }
+
+        .floater_app:hover {
+            cursor: pointer;
+            color: const.$blue_theme;
+        }
+    }
+}
