@@ -46,5 +46,8 @@
             cursor: pointer;
             color: const.$blue_theme;
         }
+        *{
+            border-radius: 15px;
+        }
     }
 }
