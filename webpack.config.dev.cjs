@@ -33,7 +33,7 @@ module.exports = {
       name: 'shell_app',
       remotes: {
         fe_expense_service: 'fe_expense_service@http://192.168.43.245:3002/remoteEntry.js', // Remote module and its URL
-        fe_projects_service: 'fe_projects_service@http://localhost:3001/remoteEntry.js', // Remote module and its URL
+        fe_projects_service: 'fe_projects_service@http://192.168.43.245:3001/remoteEntry.js', // Remote module and its URL
         // app_1: 'app_1@http://localhost:3002/remoteEntry.js', // Remote module and its URL
       },
       exposes: {

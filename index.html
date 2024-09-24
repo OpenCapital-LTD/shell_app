@@ -11,7 +11,17 @@
 <body>
   <div id="root"></div>
   <script type="module" src="src/main.jsx"></script>
-  <!-- <script>alert()</script> -->
+  <script>
+    if (performance.navigation.type === performance.navigation.TYPE_RELOAD || performance.navigation.type === performance.navigation.TYPE_NAVIGATE) {
+      let url = new URL(window.location.href)
+      let path = window.location.pathname
+      let depth = path.split('/').length
+      let params = url.search
+      if (depth > 2) {
+        window.location = 'http://192.168.43.245:3000?path='+path+'&param='+url.search
+      }
+    }
+  </script>
 </body>
 
 </html>

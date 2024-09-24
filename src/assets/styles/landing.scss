@@ -66,16 +66,15 @@
 
             .ava {
                 background-color: rgb(224, 224, 224);
-                height: 70px;
-                width: 70px;
+                height: 40px;
+                width: 40px;
                 border-radius: 100%;
                 letter-spacing: 2px;
-                margin-right: 15px;
                 @include mixins.flex(center, center, row);
                 font-weight: 700;
                 font-size: 17px;
-                letter-spacing: '0'
-            }
+                letter-spacing: '-5px';
+        }
 
             p {
                 min-width: 20%;
@@ -84,7 +83,7 @@
             }
 
             .hd {
-                font-size: 16px;
+                font-size: 13px;
                 width: 100%;
             }
         }
