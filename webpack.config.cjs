@@ -33,7 +33,7 @@ module.exports = {
       name: 'shell_app',
       remotes: {
         fe_expense_service: 'fe_expense_service@https://fe-finance-service.vercel.app/remoteEntry.js', // Remote module and its URL
-        fe_projects_service: 'fe_projects_service@http://oca-project-tracker.vercel.app/remoteEntry.js', // Remote module and its URL
+        fe_projects_service: 'fe_projects_service@https://oca-project-tracker.vercel.app/remoteEntry.js', // Remote module and its URL
         // app_1: 'app_1@http://localhost:3002/remoteEntry.js', // Remote module and its URL
       },
       exposes: {
