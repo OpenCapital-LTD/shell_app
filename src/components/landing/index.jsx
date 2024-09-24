@@ -1,13 +1,13 @@
 import React, { lazy, Suspense, useEffect, useState } from 'react'
 import '../../assets/styles/global.scss'
 import '../../assets/styles/landing.scss'
-import { ExperimentOutlined, FileProtectOutlined, ProjectOutlined, SignatureOutlined } from '@ant-design/icons'
+import { ExperimentOutlined, FileProtectOutlined, ProjectOutlined, SignatureOutlined, SlidersOutlined } from '@ant-design/icons'
 import { Logout, MoneyOutlined, PendingOutlined } from '@mui/icons-material'
 import { useGiraf } from '../../giraff'
 import Cookies from 'js-cookie'
 import {useNavigate} from 'react-router-dom'
 // const TestComponent = lazy(() => import('app_1/src'));
-
+const TestComponent = lazy(()=>import('fe_expense_service/user_setting'))
 const Landing = () => {
     const [date, setDate]= useState()
     const navigate = useNavigate()
@@ -57,7 +57,7 @@ const Landing = () => {
                     </p>
                 </div>
                 <div className='app_holder'>
-                    
+                  
                     <div className='app' onClick={()=>{
                         navigate('project_service')
                     }}>
@@ -68,9 +68,12 @@ const Landing = () => {
                         <SignatureOutlined className='icon' />
                         <p>Expense Logging</p>
                     </div>
-                    <div className='app'>
-                        <PendingOutlined className='icon' />
-                        <p>comming soon...</p>
+                    <div className='app' onClick={()=>{
+                        navigate('config')
+                    }}>
+                        <SlidersOutlined className='icon'/>
+                        {/* <Sliders<SlidersOutlined /> className='icon' /> */}
+                        <p>Config Settings</p>
                     </div>
                     <div className='app'>
                         <PendingOutlined className='icon' />

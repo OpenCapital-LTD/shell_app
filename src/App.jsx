@@ -72,6 +72,7 @@ const MRoutes = () => {
 
 function App() {
   const { gHead, addGHead } = useGiraf()
+  // alert("test alert : ")
   
   return (
       <ThemeRoutes />

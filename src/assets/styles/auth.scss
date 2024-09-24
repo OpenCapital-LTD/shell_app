@@ -79,19 +79,21 @@
 .login {
 
     width: 95%;
-    height: 95%;
+    height: 105%;
     border: 1px solid const.$light_orange_theme;
     padding: 5%;
-
+    @include mixins.flex(center, center, column);
+   
     h4 {
-        margin-top: 15%;
+        margin-top: 10%;
         color: rgb(97, 97, 97)
     }
 
     .input_holder {
         border: 1px solid rgb(218, 218, 218);
         border-radius: 5px;
-        margin-top: 20px
+        margin-top: 20px;
+        width: 95%;
     }
 
     .input {
@@ -130,6 +132,7 @@
         color: const.$light_orange_theme;
         font-weight: bold;
         cursor: pointer;
+        width: 88%;
     }
 
     .google {
@@ -138,7 +141,10 @@
         background-position: center;
         background-repeat: no-repeat;
         padding: 20px;
-    }
+    // border: 2px solid red;
+    width: 81%;
+    background-color: white;
+}
 }
 .auth_error{
     margin: 10%;

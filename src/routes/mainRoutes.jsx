@@ -7,6 +7,8 @@ import SsoErrorPage from '../components/authentication/sso_error';
 import { Suspense } from 'react';
 const TestComponentTwo = lazy(() => import('fe_projects_service/src'));
 const ProjectsApp = lazy(() => import('fe_projects_service/projects_app'));
+// const Settings = lazy(() => import('fe_expense_service/user_setting'));
+const Settings = lazy(()=>import('fe_expense_service/user_setting'))
 
 const NotFoundPage = ()=>{
   return(
@@ -26,6 +28,14 @@ const MainRoutes = {
       element: (
         <Suspense fallback={()=><div>loading ...</div>}>
           <ProjectsApp/>
+
+        </Suspense>
+      )
+    },{
+      path: '/config/*',
+      element: (
+        <Suspense fallback={()=><div>loading ...</div>}>
+          <Settings/>
 
         </Suspense>
       )
