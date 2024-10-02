@@ -14,7 +14,7 @@ const MinimalLayout = () => {
             <div className="auth_main">
                 <div className="logo_box">
                     {/* <div className="short_logo"></div> */}
-                    <p>| OCA eHub</p>
+                    <p>| OCA <span className='ehub_line'>eHub</span></p>
                 </div>
                 <div className="main_container">
                     <div className="vector"></div>

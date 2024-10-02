@@ -115,3 +115,14 @@
         color: white;
     }
 }
+
+.ehub_line{
+    color: transparent;
+    background: url('../images/ehub_line.png');
+    background-size: cover;
+    font-size: 40px;
+    margin-left: -5px;
+    z-index: -2;
+    background-position: center;
+    padding-bottom: 5px;
+}

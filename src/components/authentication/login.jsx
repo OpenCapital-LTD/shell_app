@@ -169,7 +169,13 @@ const Login = () => {
                         <LockOutlined className="icon" />
                         <div className="l_input">
                             <p>Password</p>
-                            <input placeholder="********" type={showPass ? "text" : "password"} onChange={(e) => {
+                            <input placeholder="********" type={showPass ? "text" : "password"} onKeyDown={(e)=>{
+                                if(e.key == 'Enter'){
+                                    actionLogin()
+                                }
+
+                                
+                            }} onChange={(e) => {
                                 setPassword(e.target.value)
                             }} />
                             <div>
