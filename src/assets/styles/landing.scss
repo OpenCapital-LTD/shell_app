@@ -32,6 +32,7 @@
         z-index: 1;
         border: 1px solid orange;
 
+
     }
 
     a {
@@ -47,6 +48,7 @@
         border-top: none;
         border-radius: 0;
         margin-right: 16%;
+        margin-top: -50px;
         // border: 2px solid red;
 
     }
@@ -104,8 +106,8 @@ margin-top: -15px;
         background-color: white;
         min-width: 10%;
         max-width: 25%;
-        height: 50%;
-        margin-top: 0%;
+        height: 60%;
+        margin-top: -5%;
         margin-right: 15%;
         @include mixins.flex(flex-start, center, column);
         overflow: hidden;
