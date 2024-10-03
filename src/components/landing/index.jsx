@@ -8,6 +8,7 @@ import Cookies from 'js-cookie'
 import { useNavigate } from 'react-router-dom'
 import appList from './applist'
 import Loading from '../load'
+import img from '../../assets/images/ehub_line.png'
 // const TestComponent = lazy(() => import('app_1/src'));
 const TestComponent = lazy(() => import('fe_expense_service/user_setting'))
 const Landing = () => {
@@ -47,6 +48,7 @@ const Landing = () => {
                     </div>
                 </div>
             </div>
+            <img src={img}/>
             <div className='right_pane'>
                 <div className='header'>
                     <p>{date} am</p>
