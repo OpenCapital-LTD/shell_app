@@ -48,7 +48,10 @@ const Landing = () => {
                     </div>
                 </div>
             </div>
-            <img src={img}/>
+            <img src={img} style={{
+                width:'0px',
+                height:'0px'
+            }}/>
             <div className='right_pane'>
                 <div className='header'>
                     <p>{date} am</p>
