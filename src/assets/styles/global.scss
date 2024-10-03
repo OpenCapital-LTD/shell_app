@@ -13,7 +13,12 @@ body {
 }
 input , select{
     background-color: transparent;
+    color: black;
 }
+input[type="checkbox"]{
+    color: white;
+}
+
 
 .main {
     height: 75%;

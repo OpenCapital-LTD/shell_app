@@ -82,7 +82,7 @@ const Landing = () => {
                     </div> */}
 
                     {
-                        gHead.user ? gHead.user.AppAccess.map(app => {
+                        gHead.user ? gHead.user.AppAccess?.map(app => {
                             return (
 
                                 <div className='app' onClick={() => {
