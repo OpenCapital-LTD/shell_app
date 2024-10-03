@@ -60,7 +60,7 @@ margin-top: -15px;
         flex: 2.5;
         @include mixins.flex(flex-start, flex-end, column);
         padding-right: 7%;
-        margin-left: -50%;
+        margin-left: -10%;
 
         .profile {
             @include mixins.flex(center, center, row);
