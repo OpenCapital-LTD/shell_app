@@ -32,7 +32,7 @@ const Login = () => {
 
     const actionLogin = () => {
         if (!name || !password) return pushMessage('missing email or password')
-            console.log('logging app config here :: ',appConfig)
+        console.log('logging app config here :: ', appConfig)
         console.log(import.meta.env)
         setLoading(true)
         actionRequest({
@@ -77,7 +77,20 @@ const Login = () => {
             // addGHead('auth_creds', creds)    
             addGHead('logedIn', true)
             addGHead('user', jwtDecode(res.token))
+            const userRoles = jwtDecode(res.token.split(" ")[1]).UserRoles
+            const appAccess = jwtDecode(res.token.split(" ")[1]).AppAccess
 
+            const pj_id = appAccess.find(l => l.App.nav_path == "pj_service").app_id
+            let rolesArray = userRoles.map(l => l.Role.type)
+            console.log('here is user : ', rolesArray);
+            if (rolesArray.includes('ADMIN')) {
+                Cookies.set('pj_role', 'admin')
+            } else if (rolesArray.includes('APPROVER')) {
+                Cookies.set('pj_role', 'approver')
+            } else {
+                Cookies.set('pj_role', 'USER')
+            }
+            
             navigate('/')
         }).catch(err => {
             console.log(err)
@@ -151,7 +164,7 @@ const Login = () => {
             <div className="login">
                 {response && <MessageBox type={messageType} txt={response} />}
                 {loading && <Loading />}
-                
+
                 <h4>LOG IN</h4>
                 <div className="input_holder">
                     <label className="input">
@@ -169,12 +182,12 @@ const Login = () => {
                         <LockOutlined className="icon" />
                         <div className="l_input">
                             <p>Password</p>
-                            <input placeholder="********" type={showPass ? "text" : "password"} onKeyDown={(e)=>{
-                                if(e.key == 'Enter'){
+                            <input placeholder="********" type={showPass ? "text" : "password"} onKeyDown={(e) => {
+                                if (e.key == 'Enter') {
                                     actionLogin()
                                 }
 
-                                
+
                             }} onChange={(e) => {
                                 setPassword(e.target.value)
                             }} />
