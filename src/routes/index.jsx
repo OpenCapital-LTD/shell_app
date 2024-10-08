@@ -6,11 +6,14 @@ import AuthRoutes from "./authRoutes";
 import Cookies from 'js-cookie';
 import { LoadingOutlined } from "@ant-design/icons";
 import { jwtDecode } from "jwt-decode";
+import useGetApi from "../hooks/getapi";
+import appConfig from "../config";
 
 const ThemeRoutes = () => {
     const [logedIn, setLogedIn] = useState(false); // This state seems unused; consider removing or using properly
     const { gHead, addGHead } = useGiraf();
     const [loading, setLoading] = useState(true);
+    const { actionRequest } = useGetApi()
 
     useEffect(() => {
         addGHead("header", true);
@@ -23,11 +26,45 @@ const ThemeRoutes = () => {
         }
         addGHead('auth_token', token);
         addGHead('user', jwtDecode(token.split(" ")[1]));
-        console.log(jwtDecode(token.split(" ")[1]));    
+        const userRoles = jwtDecode(token.split(" ")[1]).UserRoles
+        const appAccess = jwtDecode(token.split(" ")[1]).AppAccess
+        let array = []
+
+
+        const pj_id = appAccess.find(l => l.App.nav_path == "pj_service").app_id
+        // const roles_list = userRoles.find(l=>l.)
+        console.log(userRoles)
+        // let prs = userRoles.map(async l => {
+        //     try {
+        //         let res = await actionRequest({ endPoint: appConfig.api.AUTH_URL + 'accounts/roles/id', params: { role: l.role_id} })
+        //         let data = res.data
+        //         console.log('here is the user role : ',data)
+        //         return res
+
+        //     } catch (err) {
+        //         console.log(err)
+        //         return ''
+        //     }
+        // })
+
+        // Promise.all(prs)
+        let rolesArray = userRoles.map(l=>l.Role.type)
+        console.log('here is user : ', rolesArray);
+        if(rolesArray.includes('ADMIN')){
+            Cookies.set('pj_role', 'admin')
+        }else if(rolesArray.includes('APPROVER')){
+            Cookies.set('pj_role', 'approver')
+        }else{
+            Cookies.set('pj_role', 'USER')
+        }
         setLoading(false);
         addGHead('logedIn', true);
         // return addGHead('logedIn', null)
-    }, [gHead.logedIn]); 
+    }, [gHead.logedIn]);
+
+    // useEffect(()=>{
+
+    // },[])
     const routes = useRoutes([gHead.logedIn ? MainRoutes : AuthRoutes]);
 
     if (loading) {
