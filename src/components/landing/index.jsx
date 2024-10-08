@@ -101,7 +101,7 @@ const Landing = () => {
                             :
                             <div><Loading /></div>
                     }
-                    <div className='app' onClick={() => {
+                    {/* <div className='app' onClick={() => {
                         navigate(appList['appid']?.url || '/')
                     }}>
                         {appList['appid']?.icon || <PendingOutlined className='icon' />}
@@ -112,7 +112,7 @@ const Landing = () => {
                     }}>
                         {appList['appid']?.icon || <PendingOutlined className='icon' />}
                         <p>{appList['appid']?.title || 'comming soon...'}</p>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>
