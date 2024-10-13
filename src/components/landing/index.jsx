@@ -29,7 +29,6 @@ const Landing = () => {
         addGHead('auth_token', null)
         addGHead('logedIn', false)
         navigate('/')
-
     }
     return (
         <div className='landing'>
@@ -49,9 +48,9 @@ const Landing = () => {
                 </div>
             </div>
             <img src={img} style={{
-                width:'0px',
-                height:'0px'
-            }}/>
+                width: '0px',
+                height: '0px'
+            }} />
             <div className='right_pane'>
                 <div className='header'>
                     <p>{date} am</p>
@@ -87,7 +86,7 @@ const Landing = () => {
                     </div> */}
 
                     {
-                        gHead.user ? gHead.user.AppAccess?.map(app => {
+                        gHead.user ? [...new Set(gHead.user.AppAccess?.map(l => l.app_id))].map(app_id => gHead.user.AppAccess?.find(l => l.app_id == app_id)).map(app => {
                             return (
 
                                 <div className='app' onClick={() => {
