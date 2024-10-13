@@ -36,7 +36,12 @@ const Landing = () => {
             <div className='left_pane'>
                 <h2><span className='line'></span>OCA <span className='ehub_line'>eHub</span> </h2>
                 <div className='profile'>
-                    <div className='ava'>{gHead?.user.firstName[0]}{gHead?.user.lastName[0]}</div>
+                    {/* <div className='ava'>{gHead?.user.firstName[0]}{gHead?.user.lastName[0]}</div> */}
+                    <div className='ava' style={{
+                        background:gHead.user?.url_image ? gHead.user.url_image : gHead.user.picture,
+                        backgroundSize:'cover',
+                        backgroundPosition:'center'
+                    }}>{gHead?.user.firstName[0]}{gHead?.user.lastName[0]}</div>
                     <div>
                         <p className='hd'>{gHead?.user.idName}</p>
                         <p style={{
@@ -64,26 +69,6 @@ const Landing = () => {
                 </div>
                 <div className='app_holder'>
 
-                    {/* <div className='app' onClick={() => {
-                        navigate('project_service')
-                    }}>
-                        <FileProtectOutlined className='icon' />
-                        <p>Project Code Survey</p>
-                    </div>
-                    <div className='app'>
-                        <SignatureOutlined className='icon' />
-                        <p>Expense Logging</p>
-                    </div>
-                    <div className='app' onClick={() => {
-                        navigate('config')
-                    }}>
-                        <SlidersOutlined className='icon' />
-                        <p>Config Settings</p>
-                    </div>
-                    <div className='app'>
-                        <PendingOutlined className='icon' />
-                        <p>comming soon...</p>
-                    </div> */}
 
                     {
                         gHead.user ? [...new Set(gHead.user.AppAccess?.map(l => l.app_id))].map(app_id => gHead.user.AppAccess?.find(l => l.app_id == app_id)).map(app => {
@@ -100,18 +85,6 @@ const Landing = () => {
                             :
                             <div><Loading /></div>
                     }
-                    {/* <div className='app' onClick={() => {
-                        navigate(appList['appid']?.url || '/')
-                    }}>
-                        {appList['appid']?.icon || <PendingOutlined className='icon' />}
-                        <p>{appList['appid']?.title || 'comming soon...'}</p>
-                    </div>
-                    <div className='app' onClick={() => {
-                        navigate(appList['appid']?.url || '/')
-                    }}>
-                        {appList['appid']?.icon || <PendingOutlined className='icon' />}
-                        <p>{appList['appid']?.title || 'comming soon...'}</p>
-                    </div> */}
                 </div>
             </div>
         </div>
