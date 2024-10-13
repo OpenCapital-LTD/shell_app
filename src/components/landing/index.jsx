@@ -38,7 +38,7 @@ const Landing = () => {
                 <div className='profile'>
                     {/* <div className='ava'>{gHead?.user.firstName[0]}{gHead?.user.lastName[0]}</div> */}
                     <div className='ava' style={{
-                        background:gHead.user?.url_image ? gHead.user.url_image : gHead.user.picture,
+                        background: "url('"+gHead.user?.url_image ? gHead.user.url_image : gHead.user.picture+"')",
                         backgroundSize:'cover',
                         backgroundPosition:'center'
                     }}></div>
