@@ -41,7 +41,7 @@ const Landing = () => {
                         background:gHead.user?.url_image ? gHead.user.url_image : gHead.user.picture,
                         backgroundSize:'cover',
                         backgroundPosition:'center'
-                    }}>{gHead?.user.firstName[0]}{gHead?.user.lastName[0]}</div>
+                    }}></div>
                     <div>
                         <p className='hd'>{gHead?.user.idName}</p>
                         <p style={{
