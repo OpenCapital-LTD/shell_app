@@ -6,6 +6,9 @@ import Floater from '../../components/floater'
 import useQuery from '../../hooks/query'
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+
+import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from '@vercel/speed-insights/react';
 const MainLayout = () => {
     const { path, param } = useQuery()
     const navigate = useNavigate()
@@ -18,6 +21,8 @@ const MainLayout = () => {
         <div className="app_container">
             <Floater />
             <Outlet />
+            <Analytics/>
+            <SpeedInsights/>
         </div>
     )
 }
