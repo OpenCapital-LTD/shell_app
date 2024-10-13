@@ -10,7 +10,7 @@ import { useGiraf } from './giraff';
 import AuthRoutes from './routes/authRoutes';
 import ThemeRoutes from './routes';
 import Landing from './components/landing';
-
+import { Analytics } from "@vercel/analytics/react"
 // const ExpenseService = lazy(() => import('app_1/src'))
 // const ExpenseServiceDashboard = lazy(() => import('fe_expense_service/defaultDashboard'))
 const ForTest = () => {
