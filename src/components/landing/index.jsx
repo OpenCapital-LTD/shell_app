@@ -37,10 +37,11 @@ const Landing = () => {
                 <h2><span className='line'></span>OCA <span className='ehub_line'>eHub</span> </h2>
                 <div className='profile'>
                     {/* <div className='ava'>{gHead?.user.firstName[0]}{gHead?.user.lastName[0]}</div> */}
+                    {/* background: `url('${gHead.user?.url_image ? gHead.user.url_image : gHead.user.picture}')`, */}
                     <div className='ava' style={{
-                        background: "url('"+gHead.user?.url_image ? gHead.user.url_image : gHead.user.picture+"')",
-                        backgroundSize:'cover',
-                        backgroundPosition:'center'
+                        background: `url('${gHead.user?.url_image ? gHead.user.url_image : gHead.user.picture}')`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center'
                     }}></div>
                     <div>
                         <p className='hd'>{gHead?.user.idName}</p>
