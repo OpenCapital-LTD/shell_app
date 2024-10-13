@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" ref="/src/assets/images/oca_short_logo.png" />
@@ -17,9 +18,12 @@
       let depth = path.split('/').length
       let params = url.search
       if (depth > 2) {
-        // window.location = 'http://localhost:3000?path='+path+'&param='+url.search
-        window.location = 'https://ehub.opencapital.com?path='+path+'&param='+url.search
-        // alert(depth)
+        if (window.location.host.includes('localhost')) {
+          window.location = 'http://localhost:3000?path='+path+'&param='+url.search
+        } else {
+          window.location = 'https://ehub.opencapital.com?path=' + path + '&param=' + url.search
+          // alert(depth)
+        }
       }
     }
   </script>
