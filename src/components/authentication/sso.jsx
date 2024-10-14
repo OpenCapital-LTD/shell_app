@@ -18,8 +18,8 @@ const SsoPage = () => {
             addGHead('logedIn', true)
             addGHead('user', { ...jwtDecode(v.db_token), picture: v.d.picture })
 
-            console.log(token)
-            const userRoles = jwtDecode(token.split(" ")[1]).UserRoles
+            // console.log(token)
+            const userRoles = jwtDecode(token).UserRoles
             let rolesArray = userRoles.map(l => l.Role.type)
             if (rolesArray.includes('ADMIN')) {
                 Cookies.set('pj_role', 'admin')
