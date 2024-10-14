@@ -55,7 +55,7 @@ const ThemeRoutes = () => {
         }else if(rolesArray.includes('APPROVER')){
             Cookies.set('pj_role', 'approver')
         }else{
-            Cookies.set('pj_role', 'USER')
+            Cookies.set('pj_role', 'user')
         }
         setLoading(false);
         addGHead('logedIn', true);
