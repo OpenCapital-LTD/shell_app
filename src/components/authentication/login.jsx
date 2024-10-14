@@ -78,6 +78,7 @@ const Login = () => {
             // addGHead('auth_creds', creds)    
             addGHead('logedIn', true)
             addGHead('user', jwtDecode(res.token))
+            
             const userRoles = jwtDecode(res.token.split(" ")[1]).UserRoles
             const appAccess = jwtDecode(res.token.split(" ")[1]).AppAccess
 
