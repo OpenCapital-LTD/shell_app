@@ -59,6 +59,7 @@ const Header = () => {
                 <Tooltip title='Log Out'>
                     <div className="action_but" onClick={() => {
                         Cookies.remove('auth_token')
+                        Cookies.remove('pj_role')
                         addGHead("logedIn", false)
                     }}>
                         <div className="action_atom">

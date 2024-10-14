@@ -17,6 +17,19 @@ const SsoPage = () => {
             addGHead('auth_token', v.db_token)
             addGHead('logedIn', true)
             addGHead('user', { ...jwtDecode(v.db_token), picture: v.d.picture })
+            const userRoles = jwtDecode(v.db_token.split(" ")[1]).UserRoles
+            const appAccess = jwtDecode(v.db_token.split(" ")[1]).AppAccess
+
+            const pj_id = appAccess.find(l => l.App.nav_path == "pj_service").app_id
+            let rolesArray = userRoles.map(l => l.Role.type)
+            console.log('here is user : ', rolesArray);
+            if (rolesArray.includes('ADMIN')) {
+                Cookies.set('pj_role', 'admin')
+            } else if (rolesArray.includes('APPROVER')) {
+                Cookies.set('pj_role', 'approver')
+            } else {
+                Cookies.set('pj_role', 'user')
+            }
             navigation('/')
             console.log(v)
         } catch (err) {

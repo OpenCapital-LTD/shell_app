@@ -26,6 +26,7 @@ const Landing = () => {
     }, [])
     const logOut = () => {
         Cookies.remove('auth_token')
+        Cookies.remove('pj_role')
         addGHead('auth_token', null)
         addGHead('logedIn', false)
         navigate('/')
