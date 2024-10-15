@@ -19,7 +19,7 @@ const MainLayout = () => {
     }, [])
     return (
         <div className="app_container">
-            <Floater />
+            {/* <Floater /> */}
             <Outlet />
             <Analytics/>
             <SpeedInsights/>

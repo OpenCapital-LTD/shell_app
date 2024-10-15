@@ -10,19 +10,19 @@ const appList = {
         url:'project_service'
     },
     el_service:{
-        app_id:'pj_service',
-        title:'Expense Logging',
+        app_id:'el_service',
+        title:'Expense Tracker',
         icon: <SignatureOutlined className='icon'/>,
-        url:'project_service'
+        url:'expense_service'
     },
     cn_service:{
-        app_id:'pj_service',
+        app_id:'cn_service',
         title:'Admin Setup',
         icon: <SlidersOutlined className='icon'/>,
         url:'config'
     },
     cs_service:{
-        app_id:'pj_service',
+        app_id:'cs_service',
         title:'comming soon...',
         icon: <PendingOutlined className='icon'/>,
         url:'/'

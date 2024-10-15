@@ -9,6 +9,7 @@ const TestComponentTwo = lazy(() => import('fe_projects_service/src'));
 const ProjectsApp = lazy(() => import('fe_projects_service/projects_app'));
 // const Settings = lazy(() => import('fe_expense_service/user_setting'));
 const Settings = lazy(()=>import('fe_expense_service/user_setting'))
+const ExpenseSystem = lazy(()=>import('fe_expense_service/expense_app'))
 
 const NotFoundPage = ()=>{
   return(
@@ -28,6 +29,14 @@ const MainRoutes = {
       element: (
         <Suspense fallback={()=><div>loading ...</div>}>
           <ProjectsApp/>
+
+        </Suspense>
+      )
+    },{
+      path: '/expense_service/*',
+      element: (
+        <Suspense fallback={()=><div>loading ...</div>}>
+          <ExpenseSystem/>
 
         </Suspense>
       )
