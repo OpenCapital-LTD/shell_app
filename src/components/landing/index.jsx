@@ -62,7 +62,7 @@ const Landing = () => {
                 <div className='header'>
                     <p>{date} am</p>
                     <p>
-                        <a href='https://opencapital.com' target='_blank'>Documentation</a>
+                        <a href='https://www.dropbox.com/scl/fi/guiia8wmktyol4dyb847f/240806-Project-Tracker-Manual-vF.pptx?rlkey=c5erko781h7ef4f19lba8rrgw&st=7xgftw1g&dl=0' target='_blank'>Documentation</a>
                     </p>
                     <p>
                         <a href='https://mail.google.com/mail/u/0/#inbox?compose=CllgCHrgCldtGMdfqdGmBHWTZQQcjWnHFBWqhwPSZlTFzsPhQFbTgjdfbHBmKsjZPrdXLvcGqdq        ' target='_blank'>Support</a>
