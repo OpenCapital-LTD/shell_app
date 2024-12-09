@@ -10,6 +10,7 @@ const ProjectsApp = lazy(() => import('fe_projects_service/projects_app'));
 // const Settings = lazy(() => import('fe_expense_service/user_setting'));
 const Settings = lazy(()=>import('fe_expense_service/user_setting'))
 const ExpenseSystem = lazy(()=>import('fe_expense_service/expense_app'))
+const OCAFun = lazy(()=>import('fe_oca_fun/oca_fun'))
 
 const NotFoundPage = ()=>{
   return(
@@ -41,11 +42,17 @@ const MainRoutes = {
         </Suspense>
       )
     },{
+      path: '/oca_fun/*',
+      element: (
+        <Suspense fallback={()=><div>loading ...</div>}>
+          <OCAFun/>
+        </Suspense>
+      )
+    },{
       path: '/config/*',
       element: (
         <Suspense fallback={()=><div>loading ...</div>}>
           <Settings/>
-
         </Suspense>
       )
     },

@@ -1,8 +1,11 @@
-import React, { lazy } from 'react';
+import React, { lazy, Suspense } from 'react';
 import MinimalLayout from '../layout/minimalLayout';
 import Login from '../components/authentication/login';
 import SsoPage from '../components/authentication/sso'
 import SsoErrorPage from '../components/authentication/sso_error';
+import Page from '../components/page';
+const OCAFun = lazy(()=>import('fe_oca_fun/oca_fun'))
+
 const AuthRoutes = {
     path: '/',
     element: <MinimalLayout />,
@@ -17,6 +20,22 @@ const AuthRoutes = {
         ,{
           path: '/auth_error',
           element: <SsoErrorPage />
+      },
+      {
+        path: '/oca_fun/*',
+        element: (
+          <Suspense fallback={()=><div>loading ...</div>}>
+            <OCAFun/>
+          </Suspense>
+        )
+      },
+      {
+        path: '/oca_fun_page',
+        element: (
+          <Suspense fallback={()=><div>loading ...</div>}>
+            <Page/>
+          </Suspense>
+        )
       },
         ,{
             path:'*',

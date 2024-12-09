@@ -21,6 +21,12 @@ const appList = {
         icon: <SlidersOutlined className='icon'/>,
         url:'config'
     },
+    of_service:{
+        app_id:'of_service',
+        title:'OCA Fun',
+        icon: <SlidersOutlined className='icon'/>,
+        url:'oca_fun'
+    },
     cs_service:{
         app_id:'cs_service',
         title:'comming soon...',
