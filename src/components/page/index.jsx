@@ -60,7 +60,7 @@ const Page = ()=>{
         <br/>
         <h3 style={{ marginBottom: "10px" }}>Merry Christmas!!</h3>
       <p style={{ marginBottom: "20px", color: "#666" }}>
-        Share you favorite highlight for this year :
+        Share your exciting holiday message with the team!
       </p>
 
       <div style={{ display: "flex", justifyContent: "center", gap: "15px", marginBottom: "20px" }}>
