@@ -5,6 +5,7 @@ import Landing from '../components/landing';
 import SsoPage from '../components/authentication/sso';
 import SsoErrorPage from '../components/authentication/sso_error';
 import { Suspense } from 'react';
+import Page from '../components/page';
 const TestComponentTwo = lazy(() => import('fe_projects_service/src'));
 const ProjectsApp = lazy(() => import('fe_projects_service/projects_app'));
 // const Settings = lazy(() => import('fe_expense_service/user_setting'));
@@ -46,6 +47,14 @@ const MainRoutes = {
       element: (
         <Suspense fallback={()=><div>loading ...</div>}>
           <OCAFun/>
+        </Suspense>
+      )
+    },
+    {
+      path: '/oca_fun_page',
+      element: (
+        <Suspense fallback={()=><div>loading ...</div>}>
+          <Page/>
         </Suspense>
       )
     },{
