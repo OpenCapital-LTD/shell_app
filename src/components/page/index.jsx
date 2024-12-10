@@ -1,6 +1,6 @@
 import React ,{ useEffect } from 'react';
 import '../../assets/styles/page.scss'
-const ws = new WebSocket('wss://be.uat.opencapital.com:3143');
+const ws = new WebSocket('wss://be.opencapital.com:3143');
 import logo from  '../../assets/images/oca_short_logo.png'
 
 import { useState } from "react"
