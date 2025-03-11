@@ -34,7 +34,7 @@ module.exports = {
 
       remotes: {
         fe_expense_service: 'fe_expense_service@https://fe-finance-service.vercel.app/remoteEntry.js', // Remote module and its URL
-        fe_projects_service: 'fe_projects_service@https://oca-project-tracker.vercel.app/remoteEntry.js', // Remote module and its URL
+        fe_projects_service: 'fe_projects_service@https://oca-project-tracker-git-dev-test-oca-techs-projects.vercel.app/remoteEntry.js', // Remote module and its URL
         fe_oca_fun: 'fe_oca_fun@https://oca-fun-service.vercel.app/remoteEntry.js', // Remote module and its URL
         // app_1: 'app_1@http://localhost:3002/remoteEntry.js', // Remote module and its URL
       },
