@@ -20,7 +20,7 @@ const MinimalLayout = () => {
       localStorage.setItem("fun", fun);
     }
   });
-  return some?.includes("puzzle") ? (
+  return some?.includes("/oca_puzzle") ? (
     <div>
       <Outlet />
     </div>
