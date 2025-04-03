@@ -12,6 +12,7 @@ const SsoErrorPage = () => {
     const [err, setErr] = useState()
     
     useEffect(() => {
+      let fun = Cookies.get('fun')
       if(error){
         addGHead('error',error)
         navigation('/auth_error')
@@ -19,7 +20,11 @@ const SsoErrorPage = () => {
         if(gHead.error){
             setErr(gHead.error)
         }else{
-            navigation('/')
+            if(fun){
+              navigation('/'+fun)
+            }else{
+              navigation('/')
+            }
         }
       }
     }, [])

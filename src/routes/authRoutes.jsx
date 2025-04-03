@@ -5,6 +5,7 @@ import SsoPage from '../components/authentication/sso'
 import SsoErrorPage from '../components/authentication/sso_error';
 import Page from '../components/page';
 const OCAFun = lazy(()=>import('fe_oca_fun/oca_fun'))
+const OcaPuzzle = lazy(()=>import('fe_oca_puzzle/oca_puzzle'))
 
 const AuthRoutes = {
     path: '/',
@@ -26,6 +27,13 @@ const AuthRoutes = {
         element: (
           <Suspense fallback={()=><div>loading ...</div>}>
             <OCAFun/>
+          </Suspense>
+        )
+      },{
+        path: '/oca_puzzle/*',
+        element: (
+          <Suspense fallback={()=><div>loading ...</div>}>
+            <OcaPuzzle/>
           </Suspense>
         )
       },

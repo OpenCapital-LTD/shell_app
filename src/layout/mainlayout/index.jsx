@@ -10,11 +10,14 @@ import { useNavigate } from 'react-router-dom'
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from '@vercel/speed-insights/react';
 const MainLayout = () => {
-    const { path, param } = useQuery()
+    const { path, param, fun } = useQuery()
     const navigate = useNavigate()
     useEffect(() => {
         if (path) {
             navigate(path + param)
+        }
+        if(fun){
+            navigate(fun)
         }
     }, [])
     return (
