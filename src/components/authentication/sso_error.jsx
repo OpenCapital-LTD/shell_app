@@ -15,11 +15,11 @@ const SsoErrorPage = () => {
     let fun = Cookies.get("fun") || localStorage.getItem("fun");
     if (error) {
       addGHead("error", error);
-      let player = error.split(":")[0].trim()
-      localStorage.setItem('user_id', player)
-      Cookies.set('user_id', player)
+      let player = error.split(":")[0].trim();
+      localStorage.setItem("user_id", player);
+      Cookies.set("user_id", player);
       if (fun) {
-        navigation(fun);
+        navigation("/" + fun);
       } else {
         navigation("/auth_error");
       }
@@ -28,7 +28,7 @@ const SsoErrorPage = () => {
         setErr(gHead.error);
       } else {
         if (fun) {
-          navigation(fun);
+          navigation("/" + fun);
         } else {
           navigation("/");
         }
