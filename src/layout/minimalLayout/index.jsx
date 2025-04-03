@@ -9,17 +9,18 @@ import useQuery from "../../hooks/query";
 
 const MinimalLayout = () => {
   const { gHead } = useGiraf();
-  const { path, param, fun } = useQuery()
-  const [some, setSome] = useState()
-  const navigate = useNavigate()
+  const { path, param, fun } = useQuery();
+  const [some, setSome] = useState();
+  const navigate = useNavigate();
   useEffect(() => {
     const location = window.location.href;
-    const player = localStorage.getItem('user_id')
-    if(fun){
-        localStorage.setItem('fun', fun)
+    setSome(location);
+    const player = localStorage.getItem("user_id");
+    if (fun) {
+      localStorage.setItem("fun", fun);
     }
   });
-  return some ? (
+  return some.includes("puzzle") ? (
     <div>
       <Outlet />
     </div>

@@ -30,7 +30,7 @@ const SsoPage = () => {
             }
             let fun = Cookies.get('fun') || localStorage.getItem('fun')
             if(fun){
-                navigation(fun)
+                navigation("/"+fun)
             }else{
             navigation('/')
             }
