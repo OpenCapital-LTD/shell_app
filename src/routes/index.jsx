@@ -15,6 +15,8 @@ const ThemeRoutes = () => {
   const { gHead, addGHead } = useGiraf();
   const [loading, setLoading] = useState(true);
   const { actionRequest } = useGetApi();
+  const { path, param, fun } = useQuery()
+
 
   useEffect(() => {
     addGHead("header", true);
