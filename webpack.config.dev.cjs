@@ -36,7 +36,7 @@ module.exports = {
         // fe_projects_service: 'fe_projects_service@https://oca-project-tracker-git-dev-test-oca-techs-projects.vercel.app/remoteEntry.js', // Remote module and its URL
         fe_projects_service: 'fe_projects_service@https://oca-project-tracker.vercel.app/remoteEntry.js', // Remote module and its URL
         fe_oca_fun: 'fe_oca_fun@http://localhost:3003/remoteEntry.js', // Remote module and its URL
-        fe_oca_puzzle: 'fe_oca_puzzle@https://puzzle-gamma-lyart.vercel.app/remoteEntry.js', // Remote module and its URL
+        fe_oca_puzzle: 'fe_oca_puzzle@https://puzzle-seven-khaki.vercel.app/remoteEntry.js', // Remote module and its URL
 
         // fe_projects_service: 'fe_projects_service@http://localhojst:3001/remoteEntry.js', // Remote module and its URL
         // app_1: 'app_1@http://localhost:3002/remoteEntry.js', // Remote module and its URL
