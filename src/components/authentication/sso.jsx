@@ -28,7 +28,13 @@ const SsoPage = () => {
             } else {
                 Cookies.set('pj_role', 'user')
             }
+            let fun = Cookies.get('fun')
+            if(fun){
+                navigation('/'+fun)
+            }else{
             navigation('/')
+            }
+
             console.log(v)
         } catch (err) {
             // navigation('/')

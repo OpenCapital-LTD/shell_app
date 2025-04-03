@@ -14,6 +14,7 @@ import useGetApi from '../../hooks/getapi'
 import { useNavigate } from 'react-router-dom'
 import { lazy } from 'react'
 import { Suspense } from 'react'
+import useQuery from '../../hooks/query'
 const TestComponent = lazy(() => import('fe_projects_service/src'));
 
 
@@ -29,9 +30,14 @@ const Login = () => {
     const [otp, setOTP] = useState('')
     const [openOtp, setOpenOtp] = useState(false)
     const navigation = useNavigate()
+    const {fun} = useQuery()
 
 
+    useEffect(()=>{
+
+    },[])
     const actionLogin = () => {
+        Cookies.set('fun', fun)
         if (!name || !password) return pushMessage('missing email or password')
         console.log('logging app config here :: ', appConfig)
         console.log(import.meta.env)
@@ -78,6 +84,7 @@ const Login = () => {
             // addGHead('auth_creds', creds)    
             addGHead('logedIn', true)
             addGHead('user', jwtDecode(res.token))
+            Cookies.set('user_id', jwtDecode(res.token).idName)
             
             const userRoles = jwtDecode(res.token.split(" ")[1]).UserRoles
             const appAccess = jwtDecode(res.token.split(" ")[1]).AppAccess
