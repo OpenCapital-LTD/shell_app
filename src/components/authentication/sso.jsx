@@ -28,9 +28,9 @@ const SsoPage = () => {
             } else {
                 Cookies.set('pj_role', 'user')
             }
-            let fun = Cookies.get('fun')
+            let fun = Cookies.get('fun') || localStorage.getItem('fun')
             if(fun){
-                navigation('/'+fun)
+                navigation(fun)
             }else{
             navigation('/')
             }

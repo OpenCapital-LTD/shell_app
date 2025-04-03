@@ -18,9 +18,6 @@ const MinimalLayout = () => {
     if(fun){
         localStorage.setItem('fun', fun)
     }
-    if(player){
-        navigate(fun)
-    }
   });
   return some ? (
     <div>
