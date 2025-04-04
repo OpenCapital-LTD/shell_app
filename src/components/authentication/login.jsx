@@ -38,7 +38,7 @@ const Login = () => {
     },[])
     const actionLogin = () => {
         Cookies.set('fun', fun)
-        localStorage.set('fun', fun)
+        localStorage.setItem('fun', fun)
         if (!name || !password) return pushMessage('missing email or password')
         console.log('logging app config here :: ', appConfig)
         console.log(import.meta.env)
