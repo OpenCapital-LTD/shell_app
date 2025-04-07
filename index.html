@@ -19,7 +19,7 @@
       let depth = path.split('/').length
       let params = url.search
       if (depth > 2) {
-        if (!window.location.host.includes('localhost')) {
+        if (window.location.host.includes('localhost')) {
           window.location = 'http://localhost:3000?path='+path+'&param='+url.search
         } else {
           window.location = 'https://ehub.opencapital.com?path=' + path + '&param=' + url.search
