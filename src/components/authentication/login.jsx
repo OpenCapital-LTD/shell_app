@@ -171,15 +171,15 @@ const Login = () => {
 
         </div >) : (
             <div className="login" style={{
-                height: !window.location.host.includes('localhost') && '40%',
-                border: !window.location.host.includes('localhost') && 'none',
-                marginTop: !window.location.host.includes('localhost') && '40%'
+                height: (!window.location.host.includes('localhost') && !window.location.host.includes("vercel")) && '40%',
+                border: (!window.location.host.includes('localhost') && !window.location.host.includes("vercel")) && 'none',
+                marginTop: (!window.location.host.includes('localhost') && !window.location.host.includes("vercel")) && '40%'
             }}>
                 {response && <MessageBox type={messageType} txt={response} />}
                 {loading && <Loading />}
 
                 <h4>LOG IN</h4>
-                {window.location.host.includes('localhost') && <>
+                {(window.location.host.includes('localhost') || window.location.host.includes('vercel')) && <>
                     <div className="input_holder">
                         <label className="input">
                             <MailOutlined className="icon" />
@@ -223,7 +223,7 @@ const Login = () => {
                 </>
                 }
                 <br></br>
-                {!window.location.host.includes('localhost') && <button className="gsi-material-button" onClick={() => {
+                {(!window.location.host.includes('localhost') && !window.location.host.includes("vercel")) && <button className="gsi-material-button" onClick={() => {
                     actionGoogleSignIn()
                 }}>
                     <div className="gsi-material-button-state"></div>
